@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="CENTER" hgap="15" prefHeight="517.0" prefWidth="688.0" style="-fx-padding: 20;" vgap="15" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.controllers.ControllerClientList">
+    <Button mnemonicParsing="false" onAction="#add" text="New debt" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+    <ComboBox fx:id="filterComboBox" prefWidth="122.0" GridPane.rowIndex="2">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="all" />
+                <String fx:value="with an account" />
+                <String fx:value="without an account" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <TextField fx:id="researchField" prefHeight="26.0" prefWidth="50.0" promptText="123..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <Button mnemonicParsing="false" onAction="#filter" text="Ok" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+
+    <TableView fx:id="clientTableView" prefHeight="376.0" prefWidth="395.0" GridPane.columnSpan="5" GridPane.rowIndex="3">
+        <columns>
+            <TableColumn fx:id="idColumn" prefWidth="42.0" text="ID" />
+            <TableColumn fx:id="surnameColumn" prefWidth="120.0" text="Surname" />
+            <TableColumn fx:id="phoneColumn" prefWidth="117.0" text="Phone" />
+            <TableColumn fx:id="addressColumn" prefWidth="115.0" text="Address" />
+        </columns>
+    </TableView>
+
+    <VBox prefWidth="168.0" spacing="5.7" GridPane.columnIndex="6" GridPane.rowIndex="3" GridPane.rowSpan="5">
+        <Label text="Surname:">
+            <VBox.margin>
+                <Insets top="50.0" />
+            </VBox.margin>
+        </Label>
+
+        <TextField fx:id="surnameField" promptText="Enter surname..." />
+
+        <Label text="Phone:" />
+        <TextField fx:id="phoneField" promptText="Enter phone..." />
+
+        <Label text="Address:" />
+        <TextField fx:id="addressField" promptText="Enter address..." />
+
+        <CheckBox fx:id="accountCheckBox" onAction="#toggleAccountFields" text="Add account" />
+
+        <VBox fx:id="accountFields" managed="false" spacing="5" visible="false">
+            <Label text="Login:" />
+            <TextField fx:id="loginField" promptText="Enter login..." />
+
+            <Label text="Password:" />
+            <PasswordField fx:id="passwordField" promptText="Enter password..." />
+        </VBox>
+
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Button onAction="#saveClient" text="Save" />
+        </HBox>
+
+        <Label fx:id="messageLabel" style="-fx-text-fill: red; -fx-font-size: 12; -fx-font-style: italic; -fx-padding: 10 0;" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+        <GridPane.margin>
+            <Insets top="-43.5" />
+        </GridPane.margin>
+    </VBox>
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+
+</GridPane>

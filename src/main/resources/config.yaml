@@ -1,0 +1,2 @@
+persistence:
+  activeUnit: "DEBT_POSTGRES"

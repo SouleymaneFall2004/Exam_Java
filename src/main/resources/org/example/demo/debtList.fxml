@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="CENTER" hgap="15" prefHeight="517.0" prefWidth="688.0" style="-fx-padding: 20;" vgap="15" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.demo.controllers.ControllerDebtList">
+    <Button mnemonicParsing="false" onAction="#add" text="New debt" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+    <ComboBox fx:id="filterComboBox" GridPane.rowIndex="2">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="all" />
+                <String fx:value="unpaid debts" />
+                <String fx:value="debt demands" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <Button mnemonicParsing="false" onAction="#filter" text="Ok" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <TableView fx:id="debtTableView"  GridPane.columnSpan="7" GridPane.rowIndex="3">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" />
+            <TableColumn fx:id="amountTotalColumn" text="Amount total" />
+            <TableColumn fx:id="amountSentColumn" text="Sent" />
+            <TableColumn fx:id="amountMissingColumn" text="Missing" />
+            <TableColumn fx:id="statusColumn" text="Status" />
+            <TableColumn fx:id="editColumn" text="Edit" />
+        </columns>
+    </TableView>
+
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+
+</GridPane>
